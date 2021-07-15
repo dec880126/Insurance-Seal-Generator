@@ -1,0 +1,1 @@
+python ./Insurance_seal_generator.py
