@@ -13,7 +13,7 @@ img = Image.open(img_src)
 draw = ImageDraw.Draw(img)
 
 # Font
-myfont = ImageFont.truetype(r'C:/windows/fonts/Arial.ttf', size = 59)
+myfont = ImageFont.truetype(r"C:/windows/fonts/Arial.ttf", size=59)
 fillcolor = "#3f48cc"
 width, height = img.size
 
@@ -38,11 +38,24 @@ if minute < 10:
     minute = "0" + str(minute)
 
 # Drawing
-draw.text((26, 200), str(year) + "." + str(month) + "." + str(day) + "  " + str(hour) + ":" + str(minute), font = myfont, fill = fillcolor)
+draw.text(
+    (26, 200),
+    str(year)
+    + "."
+    + str(month)
+    + "."
+    + str(day)
+    + "  "
+    + str(hour)
+    + ":"
+    + str(minute),
+    font=myfont,
+    fill=fillcolor,
+)
 
 # Save image
 try:
-    img.save(img_save_dir,"jpeg")
+    img.save(img_save_dir, "jpeg")
     print(f"保險受理章輸出成功 -> 路徑為: {img_save_dir}")
     os.system("pause")
 except:
